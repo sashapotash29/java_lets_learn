@@ -31,6 +31,7 @@ INTEGER - "a number WITHOUT decimal points (i.e. not a Float/Real)"
 
 NOTE:
 	- Putting a string and integer together is as simple as string concatenation.
+
 	- Example: 
 		- " System.out.println("I am a string, but I'm adding a integer called " + number); "
 		- number is the same value as defined above.
