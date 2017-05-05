@@ -25,8 +25,10 @@
 
 - an Integer number between -128 and +127.
 - Coding Example:
-	- byte byte_example = 127;
 
+```
+	byte byte_example = 127;
+```
 
 ### Short
 
@@ -34,7 +36,7 @@
 - Coding Example:
 	```
 	short short_example =  30000;
-```
+	```
 
 ### Long
 
@@ -59,11 +61,11 @@
 	- Because it provides a new line or line break.
 - Many different types of print.
 
-	```
-	print()
-	
-	println()
-	```
+```
+print()
+
+println()
+```
 
 
 ## Extra Notes
