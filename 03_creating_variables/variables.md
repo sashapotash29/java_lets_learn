@@ -12,6 +12,7 @@ This lesson will focus on data types:
 
 	- Always put the value inside of double quotations.
 	- String is written as such:
+
 		```
 		String word = "Hello I am a string";
 		```
@@ -22,16 +23,19 @@ This lesson will focus on data types:
 
 	- Put the value inside of double quotations.
 	- Example:
+
 		```
 		char character ='C';
 		```
+
 		- Notice that the CHAR is in single quotes and the class "char" is lower case.
 
 ### INTEGER - "a number WITHOUT decimal points (i.e. not a Float/Real)"
 
 	- Any number between -2.14 billion to +2.14 billion.
 	- Example:
-	```
+
+		```
 		int number = 29;
 		```
 
@@ -39,7 +43,9 @@ This lesson will focus on data types:
 	- Putting a string and integer together is as simple as string concatenation.
 
 	- Example: 
+
 		```
 		System.out.println("I am a string, but I'm adding a integer called " + number);
 		```
+		
 		- number is the same value as defined above.

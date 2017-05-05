@@ -48,6 +48,7 @@
 
 - Extremely Long float number.
 - Coding Example:
+
 ```
 	double long_decimal = 5.121231231231232;
 ```
@@ -57,6 +58,7 @@
 - Why "ln" after "print"?
 	- Because it provides a new line or line break.
 - Many different types of print.
+
 	```
 	print()
 	
