@@ -32,30 +32,36 @@
 
 - an Integer between -32,768 to 32,767.
 - Coding Example:
-	- short short_example =  30000;
-
+	```
+	short short_example =  30000;
+```
 
 ### Long
 
 - a positive or negative number exceeding 2.14 billion.
 - Coding Example:
-	- long longer_number = 1200300400500;
-
+	```
+	long longer_number = 1200300400500;
+	```
 
 ### Double
 
 - Extremely Long float number.
 - Coding Example:
-	- double long_decimal = 5.121231231231232;
-
+```
+	double long_decimal = 5.121231231231232;
+```
 
 ### println() function
 
 - Why "ln" after "print"?
 	- Because it provides a new line or line break.
 - Many different types of print.
-	- print()
-	- println()
+	```
+	print()
+	
+	println()
+	```
 
 
 ## Extra Notes

@@ -12,9 +12,14 @@
 
 5. To convert the .java file in Terminal,
 	- Locate File
-	- BASH command "javac name_of_file.java"
+	- BASH command
+		```
+		javac name_of_file.java
+		```
 		- javac is the the Java Compiler
 
 6. To run .class file, 
-	- BASH command "java -cp . hello_world"
+	```
+	BASH command "java -cp . hello_world"
+	```
 
