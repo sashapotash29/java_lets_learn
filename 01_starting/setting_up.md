@@ -1,4 +1,4 @@
-For Mac OSX
+# For Mac OSX
 
 - Install Java ig not installed already from the Oracle Website.
 

@@ -1,19 +1,19 @@
-#USER INPUT
+# USER INPUT
 
 
-###General
+### General
 
 - Anything the user can provide (i.e Name, Number, etc.)
 
 
 
-###import java.util.Scanner
+### import java.util.Scanner
 
 - this is the command to import Scanner which is necessary for receiving information from the client.
 
 
 
-###Scanner
+### Scanner
 
 - Scanner needs to be intialized.
 - Coding Example:
@@ -25,7 +25,7 @@
 	- the above function is necessary to pause the application from running and wait for a user input.
 
 
-###Getting Numbers from User
+### Getting Numbers from User
 
 - Everything from the user comes in string form and therefore needs to be converted into a number data type in order to be used for mathematical calculations.
 - To convert a string into an integer, use the following code:
