@@ -7,8 +7,10 @@
 ### FLOAT
 
 - Float is a number with decimal points (i.e. 10.00)
-- Coding Example:	
-	- float decimal = 75.9009f;
+- Coding Example:
+	```	
+	float decimal = 75.9009f;
+	```
 	- **NOTE** there is an "f" at the end of the decimal number.
 
 
@@ -17,7 +19,9 @@
 - Boolean is a true or false value
 - Useful for a series of verifications/tests that if the information passes should return True or False.
 - Coding Example:
-	- boolean result = true;
+	```
+	boolean result = true;
+	```
 	- **NOTE** that that both "boolean" and "true" are lowercase.
 
 
