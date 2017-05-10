@@ -71,9 +71,23 @@
 		- If the value returned is 1 then it is clearly an odd number.
 
 
-
-
-
+##### Plus-Plus / Minus-Minus
+- Plus-Plus is done via two "+" symbold followed by the number. This operation takes the number provided after the "++" and adds 1 to it.
+```
+		System.out.println("Plus-Plus\n");
+		x = 4;
+		y = 7;
+		System.out.println(++x);
+		System.out.println(++y);
+```
+- Minus-Minus is done via two "-" symbold followed by the number. This operation takes the number provided after the "--" and subtracts 1 to it.
+```
+		System.out.println("Minus-Minus\n");
+		x = 4;
+		y = 7;
+		System.out.println(--x);
+		System.out.println(--y);
+```
 
 
 

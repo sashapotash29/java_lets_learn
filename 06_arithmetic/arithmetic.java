@@ -41,6 +41,25 @@ public class arithmetic{
 		System.out.println(x%y);
 		// OUTPUT: 1
 
+		// PLUS-PLUS
+		System.out.println("Plus-Plus\n");
+		x = 4;
+		y = 7;
+		System.out.println(++x);
+		System.out.println(++y);
+		// OUTPUT: 5
+		// OUPUT: 8
+
+		// MINUS-MINUS
+		System.out.println("Minus-Minus\n");
+		x = 4;
+		y = 7;
+		System.out.println(--x);
+		System.out.println(--y);
+		// OUTPUT: 3
+		// OUPUT: 6
+
+
 
 	}
 
