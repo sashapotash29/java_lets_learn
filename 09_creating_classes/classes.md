@@ -73,4 +73,17 @@ public class Student{
 - update_email() takes as a parameter a String and updates the existing email.
 
 
+### Addition Information
+
+- Looking into the JavaApplication folder. There will be a lot of files that seem unusual but keep in mind these are part of the IDE NetBeans that are created for our benefit. You will notice they have a "build" folder that has a "classes" folder (i.e. JavaApplication/build/classes). Although the finals are ignore as you will compile these files yourself, the file is where NetBeans designates your ".class" files to be executed.
+- Likewise, there is a "src" file (or Source) which contains the ".java" files that hold the code that have been used to create our ".class" files.
+	- This directory is also where you can look for the human-readable code that we are used to leading up to this lecture.
+- The other files are used mainly for configuration. An example will be file pathes. As you are creating these files and need them to communicate, the pathes are made in a default fashion that allows the applcation to flow in an understandable and most likely in a way that conforms to common programming standards with respect to Java.
+
+
+
+
+
+
+
 
