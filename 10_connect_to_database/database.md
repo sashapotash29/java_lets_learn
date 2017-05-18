@@ -194,6 +194,7 @@ grade  integer);
   4 | Freddy | Pacino    |    10
 (4 rows)
 ```
+##### Code Example
 
 - So our ResultSet object we should receive based on our query should contain the information above in the order reading left to right and top to bottom.
 - Here is the code to navigate through our ResultSet and then we will explain the mechanics.
@@ -203,12 +204,46 @@ grade  integer);
             String fname = rs.getString(2);
             String lname = rs.getString(3);
             int grade = rs.getInt(4);
+
+ // THE PART BELOW IS SO WE CAN VIEW THE INFORMATION ONCE IT IS DONE.          
             System.out.println(id + " " + fname + " " + lname + " " + grade);
         
         
         }
 ```
-- 
+- It begins with a while loop that asks the question upon reaching the bottom of the loop of "did rs.next() return true or false?".
+- rs.next() is a function that returns true/false depending on if it can surmise there is another row. Similar to a for loop that will continue until a certain number/length is reached. 
+```
+// With For
+	for(int i =0; i<= array.length; i++){
+	// DO SOMETHING
+
+	};
+
+// With While
+	int i = 0;
+	while(i<= array.length){
+	// DO SOMETHING
+	i += 1;
+
+}
+```
+- Next to visually understand what we are getting, we explain what data type each item in each column is respectively.
+- This is done using getString(), getInt(), and others. Each one od these functions take in a number as a parameter asking for what index value is it in that row. For example, "Robert" will be a string that is located at the second index.
+- **Note** It does not start at 0!!!
+- At the end, I print the information so we can see what it is we retrieved.
+
+#### More example SQL Statements with Java
+
+- SELECT Statement with WHERE clause
+```
+//        SELECT WITH WHERE STATEMENT
+        String SQL2 = "SELECT * FROM student_info WHERE grade > 9";
+        Statement stmt2 = conn.createStatement();
+        ResultSet rs2 = stmt2.executeQuery(SQL2);
+        System.out.println(rs2);
+        displayResults(rs2);
+```
 
 
 
