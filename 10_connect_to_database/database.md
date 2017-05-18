@@ -2,11 +2,14 @@
 ##### Written by Alexander Potashnik (GitHub: sashapotash29)
 
 
+
+### PostgreSQL Review Section
+
 ### What is a Database?
 
 - A database is used to store information (data) in a way that allows for easy access and simple mathematical operations.
 - For example, most people are familiar with Excel but rarely find themselves reaching a point where they run out of room.
-- The truth is there is a finite amoutn of space and as more and more information is accumulated      (imagine the amount of tweets that are stored!!!), there needs to be an efficient way to store this information and look through it. 
+- The truth is there is a finite amount of space and as more and more information is accumulated      (imagine the amount of tweets that are stored!!!), there needs to be an efficient way to store this information and look through it. 
 - Low and Behold, the Database! Primarily, every business has a SQL based database and may also have a NoSQL database which will be covered later on.
 
 ### Installation Process
@@ -103,9 +106,111 @@ CREATE DATABASE *name_of_database*
 - Another example is "TEMPLATE" which allows for you to specify how the database should be structured. Generally, the deafult is used and is sufficient.
 - For more information, refer to this link: http://www.postgresqltutorial.com/postgresql-create-database/
 
-
-
+## Java Portion
 
 ### How to connect with Java?
 
 - For this example, we will be using PostgreSQL, but the main difference will be noticed in how we set up the database. The commands we write are similar within all SQL software out there.
+
+### JDBC Driver
+
+- In order to connect to the Database (in this case PostgreSQL Server), Java will need a driver.
+- **Note** A different driver is needed in case of MySQL, Microsoft SQL Server, Oracle, etc.
+- This part will take some configurations.
+- First make sure the server is running via brew and then find which port the server is listening on. By default it should be on "5432".
+- In case it is not run the following commands:
+```
+//IN TERMINAL
+
+psql
+
+// IN PSQL Terminal Environment
+
+SELECT *
+FROM pg_settings
+WHERE name = 'port';
+```
+
+- The result should return columns of different values one of which will be the port.
+
+#### Connecting to PSQL via JDBC
+
+- First we need a URL that explains the path to our PSQL Server. The idea here is that your Java program will make a request to that server and will ask to connect/interact with your database.
+- In my example, I created a database called students.
+```
+String URL = "jdbc:postgresql://localhost:5432/students";
+Connection conn = DriverManager.getConnection(URL);
+```
+- To begin, we identify the path which will generally start with 
+```
+jdbc:postgresql://
+```
+- This is then followed by the host (genearlly "localhost" for your local machine) followed by the port ( i.e. 5432) and then a "/" with the table name (i.e. students).
+
+- Next we need to make an instance of a Connection which will be an object that represents our connection to the database. 
+- **Note** You may need to add parameters in the getConnection() to explain your authentication (Username, Password).
+
+
+#### Making a Query (SELECT STATEMENT)
+
+- For those unfamiliar with SQL, every statement you execute is nothing more than String that gets read by the Database software which then deciphers what to grab from you. In our case, we will start by creating the string and then passing it through via some Java Objects.
+
+```
+Statement stmt = conn.createStatement();
+
+String SQL = "Select * from student_info";
+
+ResultSet rs = stmt.executeQuery(SQL);
+
+```
+
+- First we create a "statement" object using "conn.createStatement()". This piece of code returns a statement object that contains the properties of our connection and creates a statement object which we can then use to interact with our database.
+- The String named "SQL" is the string that contains our SQL Comman we would like to execute, which follows SQL syntax. (Basically asking for all rows of data in the table named "student_info").
+- **Note** The last line executes our statement and returns an object known as a "ResultSet". We never have to define where the database is or how to connect being the "statement" object we created contains that information.
+
+
+#### Retrieving our information from the ResultSet
+
+- If we were to println() our result set, we will see that it prints an object rather than the information. This means we need to navigate this object to obtain our information.
+
+##### TABLE STRUCTURE
+
+```
+CREATE TABLE student_info (
+id  integer PRIMARY KEY,
+fname  varchar(30) NOT NULL,
+lname  varchar(30) NOT NULL,
+grade  integer);
+```
+
+##### CONTENTS
+
+```
+ id | fname  |   lname   | grade 
+----+--------+-----------+-------
+  1 | Robert | Robinson  |    12
+  2 | Sally  | Silverman |    11
+  3 | Bobby  | Braxton   |     9
+  4 | Freddy | Pacino    |    10
+(4 rows)
+```
+
+- So our ResultSet object we should receive based on our query should contain the information above in the order reading left to right and top to bottom.
+- Here is the code to navigate through our ResultSet and then we will explain the mechanics.
+```
+ while(rs.next()){
+            int id = rs.getInt(1);
+            String fname = rs.getString(2);
+            String lname = rs.getString(3);
+            int grade = rs.getInt(4);
+            System.out.println(id + " " + fname + " " + lname + " " + grade);
+        
+        
+        }
+```
+- 
+
+
+
+
+
