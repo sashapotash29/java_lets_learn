@@ -235,7 +235,7 @@ grade  integer);
 
 #### More example SQL Statements with Java
 
-- SELECT Statement with WHERE clause
+##### SELECT Statement with WHERE clause
 ```
 //        SELECT WITH WHERE STATEMENT
         String SQL2 = "SELECT * FROM student_info WHERE grade > 9";
@@ -244,7 +244,30 @@ grade  integer);
         System.out.println(rs2);
         displayResults(rs2);
 ```
+- **Note** displayResults() is a method that takes a ResultSet as a parameter and displays the data. Being it involves a while loop that checks for rs.next() (is there another row), it can only display multiple rows, not a single row.
 
+##### INSERT Statement
+- In the beginning, I am simply grabbing inputs from the user with which to build my SQL command. This is in order to practice passing Java variables we create through String Concatenation.
+```
+ 		Scanner input = new Scanner(System.in);
+        System.out.print("New Student's ID number: ");
+        int id = Integer.parseInt(input.nextLine());
+        System.out.print("New Student's First Name: ");
+        String new_fname = input.nextLine();
+        System.out.print("New Student's Last Name: ");
+        String new_lname = input.nextLine();
+        System.out.print(new_fname + " " + new_lname +"'s Grade: ");
+        int new_grade = Integer.parseInt(input.nextLine());
+        
+        
+        String SQL4 = "INSERT INTO student_info VALUES('"+id+"','"+new_fname+"','"+ new_lname + "','" + new_grade+ "')";
+        stmt.executeUpdate(SQL4);
+        
+        ResultSet rs5 = stmt.executeQuery("SELECT * from student_info");
+
+        displayResults(rs5);
+```
+- **NOTE** We are utilizing executeUpdate() instead of executeQuery() being the latter function retuns a ResultSet where as our chose SQL command simply adds something to the database without retunring anything.
 
 
 
