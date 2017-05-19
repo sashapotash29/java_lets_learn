@@ -27,7 +27,7 @@ public class DatabaseProject {
     };
 
     public static void main(String[] args) throws SQLException {
-        // TODO code application logic here
+
         String URL = "jdbc:postgresql://localhost:5432/students";
         Connection conn = DriverManager.getConnection(URL);
 
